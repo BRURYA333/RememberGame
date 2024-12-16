@@ -1,0 +1,40 @@
+# Ignore system files
+AppData/
+
+# Ignore log files
+*.log
+
+# Ignore node_modules directories
+node_modules/
+
+# Ignore environment files
+.env
+
+# Ignore specific Python egg-info directory
+Documents/tichnut/PYTHON/jupyter-notebook-gist-0.5.0/src/jupyter_notebook_gist.egg-info/
+
+# Ignore specific React-related node_modules directories
+Documents/tichnut/REACT/PROJECT/project/vite-project/node_modules/
+Documents/tichnut/REACT/useEffect/node_modules/
+
+# Ignore IntelliJ IDEA project files
+IdeaProjects/lesson1-brurya-tenenbaum/.idea/
+
+# Ignore directories with Windows system files
+AppData/
+NTUSER.DAT*
+
+# Ignore personal directories
+Documents/
+Desktop/
+Downloads/
+Pictures/
+Videos/
+Music/
+OneDrive/
+
+# Ignore node_modules, gradle, .idea, etc.
+node_modules/
+.gradle/
+.idea/
+.vscode/

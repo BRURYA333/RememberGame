@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body>
+	
+	<div class="main">
+		<div class="button-class">
+			<img src="./images/רקע בחירה.png" id="background-select"/>
+			<div class="select_darga">
+				<!-- <H2> select level: </H2> -->
+				<!-- <img src="./images/כפתור בחירת רמה.png""" id="button-level"/> -->
+				<select name="darga" id="darga">
+					 <option value="0" >קל מאד</option> //היה לזה קלאס אופש'ן
+					  <option value="1">קל</option>
+					  <option value="2">בינוני</option>
+					  <option value="3">קשה</option>
+				</select>
+			</div>
+			<div>
+				<input id="player"></input>
+			</div>
+		</div>
+
+
+	
+	<img src="./images/כפתור התחל משחק.png" onclick="start_game()" id="button" />
+	</div>
+	</div>
+	
+		
+    	<script> //אירוע של לחיצה על ה מקלדת
+		document.addEventListener('keypress', on_keypress);
+		sessionStorage.setItem("players", "[]");
+		function start_game() {
+			const selected_darga = document.querySelector("#darga").value;
+			sessionStorage.setItem("darga", selected_darga);
+			currentUrl = window.location.href;	
+			newUrl = currentUrl.split('/').slice(0,-1).join('/')+'/memory%20game.html'
+			window.location.href = newUrl;
+		}
+		//פונקציה הפועלת בעת לחיצה על מקש האנטר. 
+//		הפונקציה מזהה את המקש הנלחץ - מקש 13 הוא האנטר
+		function on_keypress(event) {
+			let keyCode = event.keyCode ? event.keyCode : event.which;
+     			// 13 points the enter key
+     			if(keyCode === 13) {
+       				// call click function of the button
+				player_input = document.querySelector("#player");
+				name = player_input.value;
+       				alert(create_player(name));
+				player_input.value = '';
+     			}
+		}
+
+		function create_player(name) {
+			if (is_name_already_exist(name)) {
+				return "אופס... שם משתמש כבר תפוס";
+			} else {
+				const players = JSON.parse(sessionStorage.getItem("players"))//שימוש בjson כדי שנוכל להעביר את הנתונים
+				players.push({'name':name, score: 0});
+				const players_as_string=JSON.stringify(players);
+				sessionStorage.setItem("players", players_as_string);
+				return "שחקן נוסף בהצלחה";
+			}
+		}
+
+		function is_name_already_exist(name) {
+			const players = JSON.parse(sessionStorage.getItem("players"))
+			var players_with_same_name = players
+				.filter(function(player) {
+					return player.name == name;
+			});
+			return players_with_same_name.length > 0;
+		}
+	</script>
+
+</body>
+
+</html>
+

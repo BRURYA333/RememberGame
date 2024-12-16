@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+	<div class="main">
+		<div>
+			<img src="images/כל הכבוד.png" class="congraulations">
+			<div id="winner">
+				והמנצח הוא...
+			</div>
+		</div>
+
+		<script>
+			setTimeout(() => {
+				init_winner();
+			}, 3000);
+			function init_winner() {
+				const players = JSON.parse(sessionStorage.getItem("players"));
+				const sorted_players = players.sort((a, b) => (a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0))
+				const winner = sorted_players[0];
+				const parent = document.querySelector("#winner");
+				parent.innerHTML = '';
+				const winner_div = document.createElement("div");
+				winner_div.classList.add("winner_div");
+				winner_div.innerHTML = ' והמנצח הוא ' + winner.name + ' !!!';
+				parent.append(winner_div);
+			}
+
+
+			function redirect_to_menu() {
+				currentUrl = window.location.href;
+				newUrl = currentUrl.split('/').slice(0, -1).join('/') + '/menu.html'
+				window.location.href = newUrl;
+			}
+		</script>
+
+	</div>
+	<img src="./images/כפתור התחל משחק.png" onclick="redirect_to_menu()" id="button2" />
+	</div>
+	</div>
+
+</body>
+
+</html>
