@@ -1,0 +1,147 @@
+:root {
+   text-align: center;
+   font-family: Fb Elastica;
+   font-size: 2.2em;
+   direction: rtl;
+   line-height: 2em;
+}
+
+h2 {
+   margin: 0;
+}
+
+body {
+   margin: 0;
+   /* position: absolute; */
+}
+
+/* עיצוב כללי לכפתורים */
+button {
+   background-color: rgb(255, 255, 255);
+   color: black;
+   border: 2px solid rgb(95, 63, 0);
+   padding: 1em 2em;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 1.2em;
+   cursor: pointer;
+   border-radius: 5px;
+   /* עיגול פינות */
+   /* position: absolute; */
+}
+
+/* כפתור בריחוף ולחיצה */
+button:hover,
+button:active {
+   background-color: rgb(95, 63, 0);
+   color: white;
+}
+
+.main {
+   height: 100vh;
+   width: 100vw;
+   background-image: url(images/background.png);
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+#button2 {
+   position: absolute;
+   top: 50%;
+   right: 50%;
+   z-index: 6;
+}
+
+#player {
+   position: relative;
+   z-index: 7;
+   top: 13.5em;
+   left: 18em;
+   background-color: white;
+   padding: 0.1em 0.5em;
+   font-size: 1em;
+   border-radius: 6px;
+}
+
+#parent_of_items {
+   width: 63%;
+   display: grid;
+   justify-items: center;
+   align-items: center;
+   position: relative;
+   right: 9em;
+   gap: 7px;
+}
+
+.players {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   color: aliceblue;
+}
+
+.player {
+   margin: 10px;
+}
+
+#app {
+   max-width: 800px;
+}
+
+.hidden {
+   background: grey;
+   color: transparent;
+}
+
+.darga_0 {
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.darga_1 {
+   grid-template-columns: repeat(5, 1fr);
+   ;
+}
+
+.darga_2 {
+   grid-template-columns: repeat(5, 1fr);
+}
+
+.darga_3 {
+   grid-template-columns: repeat(10, 1fr);
+}
+
+.card {
+   width: 5.7vw;
+   /* height: 20vh; */
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   padding: 0px;
+   opacity: 1;
+   margin: 0.2em;
+   border: outset;
+   grid-template-columns: repeat(8, 5vh);
+   border-radius: 14px;
+}
+
+.card:after {
+   content: '';
+   display: block;
+   padding-top: 130%;
+   background: rgb(157, 97, 20) url(images/cover.jpg) center no-repeat;
+   background-size: contain;
+   border-radius: 14px;
+}
+
+.card.show:after {
+   opacity: 0;
+}
+
+.card.complete {
+   border-color: rgb(79, 18, 18);
+}
+
+.card.complete:after {
+   opacity: 0;
+}
