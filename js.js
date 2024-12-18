@@ -122,11 +122,11 @@ function recreate_pairs_cards_array_randomly() {
     const pairs_of_cards = [];
     shuffled_cards = shuffle(cards);
     for (item of shuffled_cards) {
-        if ((number_of_card_pairs*2) > pairs_of_cards.length) {
+        if (pairs_of_cards.length < (number_of_card_pairs * 2)) {
             pairs_of_cards.push(item);
             const pair = {};
             pair.src = item.src;
-            pair.id = (item.id + (number_of_card_pairs));
+            pair.id = (item.id + 100);
             pairs_of_cards.push(pair);
         }
     }

@@ -18,12 +18,6 @@ h2 {
    margin: 0;
 }
 
-.option {
-   /* z-index: 7; */
-   position: absolute;
-   top: 11rem;
-}
-
 body {
    margin: 0;
    /* position: absolute; */
@@ -35,41 +29,6 @@ body {
    position: sticky;
    transform: translate(9%, -112%);
 
-}
-
-#board {
-   height: 50%;
-}
-
-/* עיצוב ל-dropdown */
-#darga {
-   bottom: -10em;
-   left: 8em;
-   position: relative;
-   z-index: 7;
-   background-color: rgb(255, 255, 255);
-   color: black;
-   /* border: 1px solid rgb(95, 63, 0); גבול */
-   padding: 0.1em 0.5em;
-   font-size: 1em;
-   border-radius: 5px;
-   width: 200px;
-   cursor: pointer;
-}
-
-/* עיצוב בזמן ריחוף */
-#darga:hover {
-   background-color: rgb(95, 63, 0);
-   color: white;
-}
-
-/* עיצוב האפשרויות */
-#darga option {
-   background-color: white;
-   font-size: 0.6em;
-   color: black;
-   padding: 0.1em;
-   height: -20rem;
 }
 
 /* עיצוב כללי לכפתורים */
@@ -88,13 +47,6 @@ button {
    /* position: absolute; */
 }
 
-/* כפתור בריחוף ולחיצה */
-button:hover,
-button:active {
-   background-color: rgb(95, 63, 0);
-   color: white;
-}
-
 .main {
    height: 100vh;
    width: 100vw;
@@ -103,137 +55,8 @@ button:active {
    background-attachment: fixed;
 }
 
-.button-class {
-   position: absolute;
-   display: flex;
-   justify-content: center;
-   width: 100%;
-
-}
-
-#button {
-   position: relative;
-   bottom: -17em;
-   right: -1em;
-   z-index: 7;
-}
-
-#button2 {
-   position: absolute;
-   top: 50%;
-   right: 50%;
-   z-index: 6;
-}
-
-#background-select {
-   position: relative;
-   z-index: 5;
-   top: 6rem;
-   transform: scale(1.2);
-   display: flex;
-   right: 6em;
-}
-
-#player {
-   position: relative;
-   z-index: 7;
-   top: 13.5em;
-   left: 18em;
-   background-color: white;
-   padding: 0.1em 0.5em;
-   font-size: 1em;
-   border-radius: 6px;
-}
-
-#parent_of_items {
-   width: 63%;
-   display: grid;
-   justify-items: center;
-   align-items: center;
-   position: relative;
-   right: 12em;
-   gap: 7px;
-}
-
-.players {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   color: aliceblue;
-}
-
-.player {
-   margin: 10px;
-}
-
 #app {
    max-width: 800px;
-}
-
-.hidden {
-   background: grey;
-   color: transparent;
-}
-
-.darga_0 {
-   grid-template-columns: repeat(3, 1fr);
-}
-
-.darga_1 {
-   grid-template-columns: repeat(5, 1fr);
-   ;
-}
-
-.darga_2 {
-   grid-template-columns: repeat(5, 1fr);
-}
-
-.darga_3 {
-   grid-template-columns: repeat(8, 1fr);
-}
-
-.card {
-   width: 5.7vw;
-   /* height: 20vh; */
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: center;
-   padding: 0px;
-   opacity: 1;
-   margin: 0.2em;
-   border: outset;
-   grid-template-columns: repeat(8, 5vh);
-   border-radius: 14px;
-
-}
-
-.card:after {
-   content: '';
-   display: block;
-   padding-top: 130%;
-   background: rgb(157, 97, 20) url(images/cover.jpg) center no-repeat;
-   background-size: contain;
-   border-radius: 14px;
-}
-
-.card.show:after {
-   opacity: 0;
-}
-
-.card.complete {
-   border-color: rgb(79, 18, 18);
-}
-
-.card.complete:after {
-   opacity: 0;
-}
-
-
-.congraulations {
-   position: static;
-   top: 50%;
-   right: 50%;
-
 }
 
 #winner {

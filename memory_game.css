@@ -12,10 +12,8 @@ h2 {
 
 body {
    margin: 0;
-   /* position: absolute; */
 }
 
-/* עיצוב כללי לכפתורים */
 button {
    background-color: rgb(255, 255, 255);
    color: black;
@@ -27,11 +25,8 @@ button {
    font-size: 1.2em;
    cursor: pointer;
    border-radius: 5px;
-   /* עיגול פינות */
-   /* position: absolute; */
 }
 
-/* כפתור בריחוף ולחיצה */
 button:hover,
 button:active {
    background-color: rgb(95, 63, 0);
@@ -100,7 +95,6 @@ button:active {
 
 .darga_1 {
    grid-template-columns: repeat(5, 1fr);
-   ;
 }
 
 .darga_2 {
@@ -113,7 +107,6 @@ button:active {
 
 .card {
    width: 5.7vw;
-   /* height: 20vh; */
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
@@ -121,7 +114,6 @@ button:active {
    opacity: 1;
    margin: 0.2em;
    border: outset;
-   grid-template-columns: repeat(8, 5vh);
    border-radius: 14px;
 }
 
@@ -144,4 +136,43 @@ button:active {
 
 .card.complete:after {
    opacity: 0;
+}
+
+/* התאמה רספונסיבית */
+@media (max-width: 768px) {
+   :root {
+      font-size: 1.5em;
+   }
+
+   button {
+      font-size: 1em;
+      padding: 0.8em 1.5em;
+   }
+
+   .main {
+      background-size: cover;
+   }
+
+   #player {
+      top: 10em;
+      left: 5em;
+      font-size: 0.8em;
+   }
+
+   #parent_of_items {
+      width: 90%;
+      gap: 5px;
+      right: 0;
+   }
+
+   .card {
+      width: 10vw;
+   }
+
+   .darga_0,
+   .darga_1,
+   .darga_2,
+   .darga_3 {
+      grid-template-columns: repeat(3, 1fr);
+   }
 }
